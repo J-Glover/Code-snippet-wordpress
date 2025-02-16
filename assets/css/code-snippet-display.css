@@ -1,17 +1,16 @@
 .code-snippet-container {
-    margin: 20px 0;
-    background: #383a59;
-    border-radius: 6px;
+    margin: 1.5em 0;
+    border-radius: 4px;
     overflow: hidden;
+    /* Background color will be set dynamically */
 }
 
 .code-snippet-header {
+    padding: 8px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 16px;
-    background: #1e1f26;
-    border-bottom: 1px solid #3d3d3d;
+    /* Header color will be set dynamically */
 }
 
 .code-snippet-title {

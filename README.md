@@ -10,7 +10,6 @@ This plugin allows you to easily manage, organize, and display code snippets on 
 ![Code Snippet Example](Screenshot_4.png)
 ## ✨ Features
 
-- Easy code snippet management
 - Syntax highlighting support
 - Copy-to-clipboard functionality
 - Multiple programming language support
@@ -28,29 +27,24 @@ This plugin allows you to easily manage, organize, and display code snippets on 
 
 ### Adding a New Snippet
 
-1. Go to Code Snippets > Add New
-2. Enter your code in the editor
-3. Select the programming language
-4. Configure display options
-5. Click "Publish"
+- Use the code below for a example:
+
+[code-snippet language="bash" title="bash"]
+cd /var/www/html
+sudo curl -O https://wordpress.org/latest.tar.gz
+sudo tar -xvzf latest.tar.gz
+[/code-snippet]
 
 ## ⚙️ Configuration
 
 Navigate to Code Snippets > Settings to:
-- Customize theme
-- Set default language
-- Configure display options
-- Manage permissions
+- Change font
 
-## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 🔮 Future Changes
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+- Adding more fonts
+- Customizable styling options
 
 ## 📝 License
 

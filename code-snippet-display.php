@@ -87,9 +87,15 @@ function csd_add_admin_menu() {
 }
 add_action('admin_menu', 'csd_add_admin_menu');
 
-// Register settings
+// Register additional settings
 function csd_register_settings() {
     register_setting('csd_settings_group', 'csd_font_family');
+    register_setting('csd_settings_group', 'csd_background_color', array(
+        'default' => '#f5f5f5' // Light grey default
+    ));
+    register_setting('csd_settings_group', 'csd_header_color', array(
+        'default' => '#2d2d2d' // Dark grey default
+    ));
     
     // Set default font if not set
     if (!get_option('csd_font_family')) {
@@ -98,8 +104,11 @@ function csd_register_settings() {
 }
 add_action('admin_init', 'csd_register_settings');
 
-// Create the settings page
+// Modify the settings page
 function csd_settings_page() {
+    // Get saved colors or use defaults
+    $background_color = get_option('csd_background_color', '#f5f5f5');
+    $header_color = get_option('csd_header_color', '#2d2d2d');
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -109,6 +118,28 @@ function csd_settings_page() {
             do_settings_sections('code-snippet-display');
             ?>
             <table class="form-table">
+                <tr valign="top">
+                    <th scope="row">Background Color</th>
+                    <td>
+                        <input type="text" 
+                               name="csd_background_color" 
+                               value="<?php echo esc_attr($background_color); ?>" 
+                               class="color-picker" 
+                               data-default-color="#f5f5f5" />
+                        <p class="description">Choose the background color for code snippets</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Header Color</th>
+                    <td>
+                        <input type="text" 
+                               name="csd_header_color" 
+                               value="<?php echo esc_attr($header_color); ?>" 
+                               class="color-picker" 
+                               data-default-color="#2d2d2d" />
+                        <p class="description">Choose the header banner color for code snippets</p>
+                    </td>
+                </tr>
                 <tr valign="top">
                     <th scope="row">Code Font Family</th>
                     <td>
@@ -148,13 +179,36 @@ sudo tar -xvzf latest.tar.gz
     <?php
 }
 
+// Enqueue color picker assets
+function csd_admin_enqueue_scripts($hook) {
+    if ('toplevel_page_code-snippet-display' !== $hook) {
+        return;
+    }
+    
+    // Add the color picker css file
+    wp_enqueue_style('wp-color-picker');
+    
+    // Include our custom jQuery script with WordPress Color Picker dependency
+    wp_enqueue_script('custom-script-handle', plugins_url('assets/js/color-picker.js', __FILE__), array('wp-color-picker'), false, true);
+}
+add_action('admin_enqueue_scripts', 'csd_admin_enqueue_scripts');
+
 // Add custom CSS based on settings
 function csd_add_custom_css() {
     $font_family = get_option('csd_font_family', 'Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace');
+    $background_color = get_option('csd_background_color', '#f5f5f5');
+    $header_color = get_option('csd_header_color', '#2d2d2d');
+    
     $custom_css = "
         .code-snippet-container pre,
         .code-snippet-container code {
             font-family: {$font_family} !important;
+        }
+        .code-snippet-container {
+            background-color: {$background_color} !important;
+        }
+        .code-snippet-header {
+            background-color: {$header_color} !important;
         }
     ";
     wp_add_inline_style('code-snippet-display', $custom_css);
