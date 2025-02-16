@@ -1,0 +1,222 @@
+/**
+ * Shades of Purple Theme for Prism.js
+ *
+ * @author Ahmad Awais <https://twitter.com/MrAhmadAwais/>
+ * @support Follow/tweet at https://twitter.com/MrAhmadAwais/
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: #acacac;
+	direction: ltr;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+
+	font-family: 'Operator Mono', 'Fira Code', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-weight: 400;
+	font-size: 0.9em;
+	line-height: 1.5;
+	text-shadow: none;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+	color: inherit;
+	background: #a599e9;
+}
+
+/* Code blocks. */
+pre[class*='language-'] {
+	padding: 2em;
+	margin: 0.5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*='language-'],
+pre[class*='language-'] {
+	background: #1e1e3f;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+	padding: 0.1em;
+	border-radius: 0.3em;
+}
+
+.token {
+	font-weight: 400;
+}
+
+.token.comment,
+.token.prolog,
+.token.cdata {
+	color: #8ca0cf;
+}
+
+.token.delimiter,
+.token.keyword,
+.token.selector,
+.token.important,
+.token.atrule {
+	color: #ff79c6;
+}
+
+.token.operator,
+.token.attr-name {
+	color: #f8f8f2;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.token.boolean {
+	color: #bd93f9;
+}
+
+.token.tag,
+.token.tag .punctuation,
+.token.doctype,
+.token.builtin {
+	color: #ff79c6;
+}
+
+.token.entity,
+.token.symbol {
+	color: #6897bb;
+}
+
+.token.number {
+	color: #bd93f9;
+}
+
+.token.property,
+.token.constant,
+.token.variable {
+	color: #8be9fd;
+}
+
+.token.string,
+.token.char {
+	color: #f1fa8c;
+}
+
+.token.attr-value,
+.token.attr-value .punctuation {
+	color: #f1fa8c;
+}
+
+.token.attr-value .punctuation:first-child {
+	color: #a9b7c6;
+}
+
+.token.url {
+	color: #287bde;
+	text-decoration: underline;
+}
+
+.token.function {
+	color: #50fa7b;
+}
+
+.token.regex {
+	background: #364135;
+}
+
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.inserted {
+	background: #00ff00;
+}
+
+.token.deleted {
+	background: #ff000d;
+}
+
+code.language-css .token.property,
+code.language-css .token.property + .token.punctuation {
+	color: #a9b7c6;
+}
+
+code.language-css .token.id {
+	color: #ffc66d;
+}
+
+code.language-css .token.selector > .token.class,
+code.language-css .token.selector > .token.attribute,
+code.language-css .token.selector > .token.pseudo-class,
+code.language-css .token.selector > .token.pseudo-element {
+	color: #ffc66d;
+}
+
+.token.class-name {
+	color: #8be9fd;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	background: none;
+}
+
+.line-highlight.line-highlight {
+	margin-top: 36px;
+	background: linear-gradient(to right, rgba(179, 98, 255, 0.17), transparent);
+}
+
+.line-highlight.line-highlight:before,
+.line-highlight.line-highlight[data-end]:after {
+	content: '';
+}
+
+/* Shell/Bash specific syntax highlighting */
+.token.command,
+.token.bash .token.function {
+	color: #50fa7b;  /* Bright green for commands */
+}
+
+.token.parameter {
+	color: #ffb86c;  /* Orange for parameters */
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-bash .token.keyword {
+	color: #ff79c6;  /* Pink for operators and keywords */
+}
+
+.token.bash .token.operator {
+	color: #f8f8f2;  /* Light color for bash operators */
+}
+
+/* Directory paths */
+.token.string,
+.token.bash .token.string {
+	color: #f1fa8c;  /* Yellow for strings/paths */
+}

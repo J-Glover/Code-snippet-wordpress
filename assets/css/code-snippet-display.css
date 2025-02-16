@@ -1,0 +1,58 @@
+.code-snippet-container {
+    margin: 20px 0;
+    background: #383a59;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.code-snippet-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: #1e1f26;
+    border-bottom: 1px solid #3d3d3d;
+}
+
+.code-snippet-title {
+    color: #f8f8f2;
+    font-size: 12px;
+}
+
+.code-snippet-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.copy-button,
+.edit-button {
+    background: transparent;
+    border: 1px solid #6272a4;
+    color: #6272a4;
+    padding: 4px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.copy-button:hover,
+.edit-button:hover {
+    background: #6272a4;
+    color: #f8f8f2;
+}
+
+pre {
+    margin: 0 !important;
+    padding: 16px !important;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.code-snippet-container pre code {
+    font-size: 0.9em;
+}
+
+.code-snippet-container pre[class*="language-"] {
+    background: transparent;
+} 
