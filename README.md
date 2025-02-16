@@ -6,6 +6,8 @@ A WordPress plugin for managing and displaying code snippets on your website.
 
 This plugin allows you to easily manage, organize, and display code snippets on your WordPress website. Perfect for developers, technical bloggers, and educators who want to share code examples with syntax highlighting.
 
+
+![Code Snippet Example](Screenshot_4.png)
 ## ✨ Features
 
 - Easy code snippet management
@@ -60,5 +62,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- List any libraries or tools you used
-- Credit any inspiration or resources
+- CursorAI used to generate the code for this plugin
+
